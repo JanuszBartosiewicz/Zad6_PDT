@@ -19,15 +19,15 @@ doc = {
     "timestamp": datetime.now(timezone.utc).isoformat()
 }
 
-
-MONGO_URI = os.getenv("MONGO_URI") or "mongodb+srv://DB_user:a508exhD54Dilcng@cluster0.vi1bdid.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-
+# MONGO_URI = os.getenv("MONGO_URI") or "mongodb+srv://DB_user:a508exhD54Dilcng@cluster0.vi1bdid.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 # ----------------------
 # TESTY
 # ----------------------
 
 def log_result(test_name, status, message):
+    print(status)
+    print(message)
     print(f"{'✅' if status == 'PASS' else '❌'} [{test_name}] {message}")
     report_data.append({
         "test": test_name,
@@ -35,7 +35,6 @@ def log_result(test_name, status, message):
         "message": message,
         "timestamp": datetime.utcnow().isoformat()
     })
-
 
 def test_connection(client):
     try:

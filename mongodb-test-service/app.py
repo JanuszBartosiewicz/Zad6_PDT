@@ -108,3 +108,8 @@ if __name__ == "__main__":
         test_empty_collection_behavior(collection)
         test_insert_and_read(collection)
         test_schema_validation(collection)
+
+    save_report_csv()
+    save_report_html()
+    zip_reports()
+    print("📄 Raport zapisany jako: raport.csv oraz raport.html")

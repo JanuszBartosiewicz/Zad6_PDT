@@ -26,9 +26,7 @@ doc = {
 # ----------------------
 
 def log_result(test_name, status, message):
-    print(status)
-    print(message)
-    print(f"{'✅' if status == 'PASS' else '❌'} [{test_name}] {message}")
+    print(f"{'✅' if status == 'PASS' else '❌'} {test_name} {message}")
     report_data.append({
         "test": test_name,
         "status": status,
@@ -39,7 +37,7 @@ def log_result(test_name, status, message):
 def test_connection(client):
     try:
         client.admin.command('ping')
-        log_result("TEST 1", "PASS", "Połączenie z MongoDB powiodło się.")
+        log_result("TEST 1", 'PASS', "Połączenie z MongoDB powiodło się.")
         return True
     except ConnectionFailure as e:
         log_result("TEST 1", "FAIL", f"Błąd połączenia: {e}")

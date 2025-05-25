@@ -37,7 +37,7 @@ def test_insert_and_read(collection):
     collection.insert_one(test_doc)
     retrieved = collection.find_one({"_id": doc_id})
     if retrieved:
-        log_result("TEST 2", "PASS", "Insert i odczyt dokumentu powiodły się.")
+        log_result("TEST 2", 'PASS', "Insert i odczyt dokumentu powiodły się.")
     else:
         log_result("TEST 2", "FAIL", "Insert lub odczyt dokumentu nie powiódł się.")
 
